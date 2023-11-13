@@ -8,23 +8,23 @@ const Navbar = () => {
         <div className="flex flex-col w-2/3 space-y-6 sm:space-y-0 mb-4 sm:mb-0 sm:flex-row sm:space-x-4">
           <div className="form-control text-sm border-b-2 border-slate-300">
             <label className="label cursor-pointer space-x-2">
-              <input type="checkbox" checked="checked" className="" />
+              <input type="checkbox" checked="checked" readOnly className="" />
               <span className="label-text">Open Now</span>
             </label>
           </div>
           <select className="text-sm border-b-2 border-slate-300">
-            <option disabled selected>
+            <option disabled value={""}>
               Price
             </option>
-            <option>100 - 200</option>
-            <option>200 - 300</option>
+            <option value={""}>100 - 200</option>
+            <option value={""}>200 - 300</option>
           </select>
           <select className="text-sm border-b-2 border-slate-300">
-            <option disabled selected>
+            <option disabled value={""}>
               Categories
             </option>
-            <option>Fast Food</option>
-            <option>Traditional</option>
+            <option value={""}>Fast Food</option>
+            <option value={""}>Traditional</option>
           </select>
         </div>
       </div>

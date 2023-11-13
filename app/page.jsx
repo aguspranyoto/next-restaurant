@@ -6,13 +6,6 @@ export default function Home() {
       <h1 className="text-2xl">All Restaurants</h1>
       <div className="w-full grid sm:grid-cols-2 items-center justify-center md:grid-cols-3 lg:grid-cols-4 gap-4 my-5">
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
       </div>
       <div className="w-full text-center">
         <button className="w-[35%] border border-slate-900 text-black font-bold py-2 px-4 text-xs">

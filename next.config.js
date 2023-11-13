@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  //   reactStrictMode: true,
+  images: {
+    domains: ["restaurant-api.dicoding.dev"],
+  },
+};
 
 module.exports = nextConfig;
