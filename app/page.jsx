@@ -2,7 +2,7 @@ import { Card } from "../components";
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-5xl py-6 px-2 sm:px-6 lg:px-8 ">
+    <main className="mx-auto max-w-5xl py-6 px-4 sm:px-6 lg:px-8 ">
       <h1 className="text-2xl">All Restaurants</h1>
       <div className="w-full grid sm:grid-cols-2 items-center justify-center md:grid-cols-3 lg:grid-cols-4 gap-4 my-5">
         <Card />
