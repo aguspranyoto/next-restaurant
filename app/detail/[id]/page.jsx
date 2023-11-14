@@ -11,6 +11,7 @@ async function getRestaurant(id) {
 
   return res.json();
 }
+
 async function DetailPage({ params }) {
   const id = params.id;
   const data = await getRestaurant(id);
@@ -20,7 +21,7 @@ async function DetailPage({ params }) {
       <section className="border-t border-slate-300 mx-auto max-w-5xl py-6 px-4 sm:px-6 lg:px-8 ">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl">Detail Restaurant</h1>
-          <Link href={"/"} className="btn btn-primary">
+          <Link href={"/"} className="bg-slate-900 text-white px-4 py-2">
             Homepage
           </Link>
         </div>
@@ -144,7 +145,7 @@ async function DetailPage({ params }) {
               <div className="flex flex-col w-full">
                 {restaurant.customerReviews.map((item) => (
                   <div
-                    className="card bg-slate-900 text-white w-1/3 mb-2 flex flex-col p-4"
+                    className="card bg-slate-900 text-white w-full sm:w-1/2 mb-2 flex flex-col p-4"
                     key={item.name}
                   >
                     <div className="flex justify-between mb-2 items-center">
