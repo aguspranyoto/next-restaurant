@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="cupcake">
       <body className={inter.className}>
         <Header />
-        <Navbar />
+
         {children}
         <Footer />
       </body>

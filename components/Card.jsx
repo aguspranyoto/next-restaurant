@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Detail } from "../components";
 
 async function getRestaurants() {
   const res = await fetch("https://restaurant-api.dicoding.dev/list", {
@@ -16,13 +18,14 @@ export default async function Card() {
   return (
     <>
       {restaurants.map((item) => (
-        <div className=" w-full bg-base-100 mb-10" key={item.id}>
-          <figure>
+        <div className=" w-full bg-base-100 mb-10 " key={item.id}>
+          <figure className="">
             <Image
               width={400}
               height={400}
               src={`https://restaurant-api.dicoding.dev/images/large/${item.pictureId}`}
               alt="restaurant"
+              className=""
             />
           </figure>
           <div className="">
@@ -84,9 +87,13 @@ export default async function Card() {
               </div>
             </div>
             <div className="w-full">
-              <button className="w-full bg-slate-900 text-white py-2 px-4 text-xs">
+              <Link
+                href={`/detail/${item.id}`}
+                type="button"
+                className="w-full bg-slate-900 text-white py-2 px-4 text-xs"
+              >
                 LEARN MORE
-              </button>
+              </Link>
             </div>
           </div>
         </div>
