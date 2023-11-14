@@ -110,7 +110,7 @@ async function DetailPage({ params }) {
                 <h2>
                   Categories :{" "}
                   {restaurant.categories.map((item, i, row) => (
-                    <span className="ml-2">
+                    <span className="ml-2" key={item.name}>
                       {i + 1 === row.length ? `${item.name}.` : `${item.name},`}
                     </span>
                   ))}
@@ -123,7 +123,7 @@ async function DetailPage({ params }) {
                 <div>
                   <h2 className="font-medium">Foods:</h2>
                   {restaurant.menus.foods.map((item) => (
-                    <div className="flex flex-col">
+                    <div className="flex flex-col" key={item.name}>
                       <span className="">{item.name}</span>
                     </div>
                   ))}
@@ -132,7 +132,7 @@ async function DetailPage({ params }) {
                 <div className="ml-6">
                   <h2 className="font-medium">Drinks:</h2>
                   {restaurant.menus.drinks.map((item) => (
-                    <div className="flex flex-col   ">
+                    <div className="flex flex-col   " key={item.name}>
                       <span className="">{item.name}</span>
                     </div>
                   ))}
@@ -143,7 +143,10 @@ async function DetailPage({ params }) {
               <h2 className="text-2xl mb-2"> Customer Reviews </h2>
               <div className="flex flex-col w-full">
                 {restaurant.customerReviews.map((item) => (
-                  <div className="card bg-slate-900 text-white w-1/3 mb-2 flex flex-col p-4">
+                  <div
+                    className="card bg-slate-900 text-white w-1/3 mb-2 flex flex-col p-4"
+                    key={item.name}
+                  >
                     <div className="flex justify-between mb-2 items-center">
                       <span className="text-xl font-bold">{item.name}</span>
                       <span className="text-sm">{item.date}</span>
