@@ -1,4 +1,3 @@
-import { Detail } from "../../../components";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,10 +17,13 @@ async function DetailPage({ params }) {
   const restaurant = data.restaurant;
   return (
     <>
-      <section className="border-t border-slate-300 mx-auto max-w-5xl py-6 px-4 sm:px-6 lg:px-8 ">
+      <section className="border-t border-slate-300 mx-auto max-w-5xl py-6 px-4 sm:px-6 lg:px-8 shadow-xl mb-6">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl">Detail Restaurant</h1>
-          <Link href={"/"} className="bg-slate-900 text-white px-4 py-2">
+          <Link
+            href={"/"}
+            className="text-md px-6 py-2 border border-slate-900 text-slate-900 hover:text-white hover:bg-slate-900 "
+          >
             Homepage
           </Link>
         </div>
@@ -145,7 +147,7 @@ async function DetailPage({ params }) {
               <div className="flex flex-col w-full">
                 {restaurant.customerReviews.map((item, i) => (
                   <div
-                    className="card bg-slate-900 text-white w-full sm:w-1/2 mb-2 flex flex-col p-4"
+                    className="card shadow-xl w-full sm:w-1/2 mb-2 flex flex-col p-4"
                     key={i}
                   >
                     <div className="flex justify-between mb-2 items-center">

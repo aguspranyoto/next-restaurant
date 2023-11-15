@@ -2,14 +2,14 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function Navbar({ datas, per_page }) {
+export default function Navbar({ datas }) {
   const router = useRouter();
   const [isGood, setIsGood] = useState(false);
   const [selectedCity, setSelectedCity] = useState("");
   const kota = datas;
   const cities = kota.map((item) => item.city);
   const uniqueCities = [...new Set(cities)];
-
+  const per_page = 8;
   useEffect(() => {
     router.push(
       `?goodRating=${isGood}&city=${selectedCity}&per_page=${per_page}`
@@ -51,7 +51,7 @@ export default function Navbar({ datas, per_page }) {
 
       <div className="sm:w-40 sm:text-end">
         <button
-          className="px-6 py-2 border border-slate-900 text-slate-900 text-xs"
+          className="px-6 py-2 border border-slate-900 text-slate-900 hover:text-white hover:bg-slate-900 text-xs"
           onClick={() => {
             router.push(`?goodRating=false&city=&per_page=8`);
           }}

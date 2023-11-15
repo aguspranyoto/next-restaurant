@@ -19,7 +19,7 @@ export default async function Home({ searchParams }) {
   // search params
   const goodRating = searchParams["goodRating"];
   const city = searchParams["city"];
-  const per_page = 8;
+  const per_page = searchParams["per_page"];
 
   const filteredData =
     city?.length > 0 && goodRating == "true"
@@ -35,9 +35,9 @@ export default async function Home({ searchParams }) {
   return (
     <>
       <Navbar datas={cities} per_page={per_page} />
-      <main className="mx-auto max-w-5xl py-6 px-4 sm:px-6 lg:px-8 ">
+      <main className="mx-auto max-w-5xl py-6 px-4 sm:px-6 lg:px-8 shadow-xl mb-6">
         <h1 className="text-2xl">All Restaurants</h1>
-        <div className="w-full grid sm:grid-cols-2 items-center justify-center md:grid-cols-3 lg:grid-cols-4 gap-4 my-5">
+        <div className="w-full grid sm:grid-cols-2 items-center justify-center md:grid-cols-3 lg:grid-cols-4 gap-4 my-5 ">
           <Card data={filteredData} per_page={per_page} />
         </div>
         <div className="w-full text-center">

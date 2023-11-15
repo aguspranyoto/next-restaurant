@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Detail } from "../components";
 
 export default async function Card({ data, per_page }) {
   return (
@@ -81,7 +80,7 @@ export default async function Card({ data, per_page }) {
                   <Link
                     href={`/detail/${item.id}`}
                     type="button"
-                    className="w-full bg-slate-900 text-white py-2 px-4 text-xs"
+                    className="w-full font-bold border text-center bg-slate-900 hover:bg-transparent border-slate-900 hover:text-slate-900 text-white py-2 px-4 text-xs"
                   >
                     LEARN MORE
                   </Link>
