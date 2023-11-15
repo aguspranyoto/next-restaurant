@@ -33,8 +33,12 @@ export default async function Home({ searchParams }) {
   console.log(city);
 
   const filteredData =
-    goodRating == "true" && city?.length > 0
-      ? restaurants.filter((value) => value.rating > 4 && value.city == city)
+    city?.length > 0 && goodRating == "true"
+      ? restaurants.filter((value) => (value.rating > 4) & (value.city == city))
+      : city?.length > 0 && goodRating == "false"
+      ? restaurants.filter((value) => value.city == city)
+      : city?.length == 0 && goodRating == "true"
+      ? restaurants.filter((value) => value.rating > 4)
       : restaurants;
 
   return (

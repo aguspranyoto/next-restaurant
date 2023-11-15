@@ -143,10 +143,10 @@ async function DetailPage({ params }) {
             <div className="flex py-5 border-b-2 border-gray-200 flex-col">
               <h2 className="text-2xl mb-2"> Customer Reviews </h2>
               <div className="flex flex-col w-full">
-                {restaurant.customerReviews.map((item) => (
+                {restaurant.customerReviews.map((item, i) => (
                   <div
                     className="card bg-slate-900 text-white w-full sm:w-1/2 mb-2 flex flex-col p-4"
-                    key={item.name}
+                    key={i}
                   >
                     <div className="flex justify-between mb-2 items-center">
                       <span className="text-xl font-bold">{item.name}</span>
