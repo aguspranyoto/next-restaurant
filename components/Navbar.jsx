@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function Navbar({ datas }) {
+export default function Navbar({ datas, per_page }) {
   const router = useRouter();
   const [isGood, setIsGood] = useState(false);
   const [selectedCity, setSelectedCity] = useState("");
@@ -11,7 +11,9 @@ export default function Navbar({ datas }) {
   const uniqueCities = [...new Set(cities)];
 
   useEffect(() => {
-    router.push(`?goodRating=${isGood}&city=${selectedCity}`);
+    router.push(
+      `?goodRating=${isGood}&city=${selectedCity}&per_page=${per_page}`
+    );
   }, [selectedCity, isGood]);
   return (
     <nav className="mx-auto max-w-5xl py-6 px-2 sm:px-6 lg:px-8  bg-transparent border-t border-b border-slate-300 flex flex-col justify-center sm:flex-row sm:justify-between items-center">
@@ -51,7 +53,7 @@ export default function Navbar({ datas }) {
         <button
           className="px-6 py-2 border border-slate-900 text-slate-900 text-xs"
           onClick={() => {
-            router.push(`?goodRating=false&city=`);
+            router.push(`?goodRating=false&city=&per_page=8`);
           }}
         >
           CLEAR ALL
